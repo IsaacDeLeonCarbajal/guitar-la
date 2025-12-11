@@ -1,14 +1,14 @@
-import { useMemo } from "react";
-import type { Cart as CartType, Item as ItemType } from "../../Types/models";
+import type { Cart as CartType } from "../../Types/models";
+import { useCart } from "../../Hooks/useCart";
 
-export default function Cart({ cart, removeItemFromCart, updateQuantityBy, clearCart }: { cart: CartType, removeItemFromCart: (id: ItemType['id']) => void, updateQuantityBy: (id: ItemType['id'], amount: number) => void, clearCart: () => void }) {
-    const cartTotal = useMemo(() => {
-        return Object.values(cart).reduce((prev, curr) => prev += (curr.price * curr.quantity), 0);
-    }, [cart]);
-
-    const isEmpty = useMemo(() => {
-        return Object.keys(cart).length == 0;
-    }, [cart]);
+export default function Cart({ cart, setCart }: { cart: CartType, setCart: React.Dispatch<React.SetStateAction<CartType>> }) {
+    const {
+        removeItemFromCart,
+        updateQuantityBy,
+        clearCart,
+        cartTotal,
+        isEmpty,
+    } = useCart(cart, setCart);
 
     return (
         <div id="carrito" className="bg-white p-3">
