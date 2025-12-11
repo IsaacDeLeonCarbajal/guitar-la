@@ -1,6 +1,8 @@
-export type Cart = (Item & {
-    quantity: number;
-})[]
+export type Cart = Record<
+    Item['id'],
+    Item & {
+        quantity: number;
+    }>
 
 export type Item = {
     id: number;
