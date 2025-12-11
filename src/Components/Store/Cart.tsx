@@ -2,8 +2,8 @@ import type { Cart as CartType } from "../../Types/models";
 import { useCart } from "../../Hooks/useCart";
 
 type CartProps = {
-    cart: CartType,
-    setCart: React.Dispatch<React.SetStateAction<CartType>>,
+    cart: CartType;
+    setCart: React.Dispatch<React.SetStateAction<CartType>>;
 };
 
 export default function Cart({ cart, setCart }: CartProps) {

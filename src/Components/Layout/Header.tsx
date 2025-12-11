@@ -3,8 +3,8 @@ import type { Cart as CartType } from "../../Types/models";
 import Cart from "../Store/Cart";
 
 type HeaderProps = {
-    cart: CartType,
-    setCart: React.Dispatch<React.SetStateAction<CartType>>,
+    cart: CartType;
+    setCart: React.Dispatch<React.SetStateAction<CartType>>;
 };
 
 export default function Header({ cart, setCart }: HeaderProps) {

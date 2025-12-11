@@ -1,9 +1,9 @@
 import type { Item as ItemType } from "../../Types/models";
 
 type ItemProps = {
-    item: ItemType,
-    onSelect: (i: ItemType) => void,
-    isSelected: boolean,
+    item: ItemType:
+    onSelect: (i: ItemType) => void:
+    isSelected: boolean:
 };
 
 export default function Item({ item, onSelect, isSelected }: ItemProps) {
