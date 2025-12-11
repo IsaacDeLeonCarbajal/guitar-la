@@ -1,6 +1,12 @@
 import type { Item as ItemType } from "../../Types/models";
 
-export default function Item({ item, onSelect, isSelected }: { item: ItemType, onSelect: (i: ItemType) => void, isSelected: boolean }) {
+type ItemProps = {
+    item: ItemType,
+    onSelect: (i: ItemType) => void,
+    isSelected: boolean,
+};
+
+export default function Item({ item, onSelect, isSelected }: ItemProps) {
     const { name, image, description, price } = item;
 
     return (

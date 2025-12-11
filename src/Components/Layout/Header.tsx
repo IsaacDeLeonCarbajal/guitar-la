@@ -2,7 +2,12 @@ import type { Cart as CartType } from "../../Types/models";
 
 import Cart from "../Store/Cart";
 
-export default function Header({ cart, setCart }: { cart: CartType, setCart: React.Dispatch<React.SetStateAction<CartType>> }) {
+type HeaderProps = {
+    cart: CartType,
+    setCart: React.Dispatch<React.SetStateAction<CartType>>,
+};
+
+export default function Header({ cart, setCart }: HeaderProps) {
     return (
         <header className="py-5 header">
             <div className="container-xl">
