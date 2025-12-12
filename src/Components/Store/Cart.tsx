@@ -1,9 +1,11 @@
+import type { Dispatch, SetStateAction } from "react";
+
 import type { Cart as CartType } from "../../Types/models";
 import { useCart } from "../../Hooks/useCart";
 
 type CartProps = {
     cart: CartType;
-    setCart: React.Dispatch<React.SetStateAction<CartType>>;
+    setCart: Dispatch<SetStateAction<CartType>>;
 };
 
 export default function Cart({ cart, setCart }: CartProps) {
@@ -17,8 +19,9 @@ export default function Cart({ cart, setCart }: CartProps) {
 
     return (
         <div id="carrito" className="bg-white p-3">
-            {isEmpty ?
-                <p className="text-center">El carrito esta vacio</p> :
+            {isEmpty ? (
+                <p className="text-center">El carrito esta vacio</p>
+            ) : (
                 <>
                     <table className="w-100 table">
                         <thead>
@@ -63,7 +66,7 @@ export default function Cart({ cart, setCart }: CartProps) {
 
                     <button onClick={clearCart} className="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
                 </>
-            }
+            )}
         </div>
     );
 }

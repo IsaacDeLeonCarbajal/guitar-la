@@ -9,8 +9,8 @@ import Footer from "./Components/Layout/Footer";
 import Item from "./Components/Store/Item";
 
 function App() {
-  const [data] = useState(db as ItemType[]);
-  const [cart, setCart] = useState({} as CartType);
+  const [data] = useState<ItemType[]>(db);
+  const [cart, setCart] = useState<CartType>({});
 
   const {
     addItemToCart,

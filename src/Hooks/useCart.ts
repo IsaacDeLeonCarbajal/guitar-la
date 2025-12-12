@@ -1,8 +1,9 @@
+import type { Dispatch, SetStateAction } from "react";
 import { useMemo } from "react";
 
 import type { Cart as CartType, Item as ItemType } from "../Types/models";
 
-export const useCart = (cart: CartType, setCart: React.Dispatch<React.SetStateAction<CartType>>) => {
+export const useCart = (cart: CartType, setCart: Dispatch<SetStateAction<CartType>>) => {
     const addItemToCart = (item: ItemType) => {
         if (Object.hasOwn(cart, item.id))
             return;
