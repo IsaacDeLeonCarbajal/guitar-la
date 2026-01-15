@@ -1,6 +1,6 @@
 import { useReducer, useState } from "react";
 
-import type { Item as ItemType } from "./Types/models";
+import type { Item as ItemType } from "./Types";
 import { db } from './data/db';
 
 import Header from "./Components/Layout/Header";

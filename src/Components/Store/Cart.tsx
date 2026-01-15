@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import type { Item as ItemType, Cart as CartType } from "../../Types/models";
+import type { Item as ItemType, Cart as CartType } from "../../Types";
 
 type CartProps = {
     cart: CartType;

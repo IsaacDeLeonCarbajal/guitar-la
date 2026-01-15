@@ -1,4 +1,4 @@
-import type { Item as ItemType } from "../../Types/models";
+import type { Item as ItemType } from "../../Types";
 
 type ItemProps = {
     item: ItemType;

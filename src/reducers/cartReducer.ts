@@ -1,11 +1,7 @@
-import type { Item as ItemType } from "../Types/models";
+import type { Cart as CartType, Item as ItemType } from "../Types";
 
 export type CartState = {
-    items: Record<
-        ItemType['id'],
-        ItemType & {
-            quantity: number;
-        }>;
+    items: CartType,
 };
 
 export type CartAction =
