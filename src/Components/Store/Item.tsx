@@ -2,11 +2,11 @@ import type { Item as ItemType } from "../../Types/models";
 
 type ItemProps = {
     item: ItemType;
-    onSelect: (i: ItemType) => void;
+    onItemAdded: (i: ItemType) => void;
     isSelected: boolean;
 };
 
-export default function Item({ item, onSelect, isSelected }: ItemProps) {
+export default function Item({ item, onItemAdded, isSelected }: ItemProps) {
     const { name, image, description, price } = item;
 
     return (
@@ -18,7 +18,7 @@ export default function Item({ item, onSelect, isSelected }: ItemProps) {
                 <h3 className="text-black fs-4 fw-bold text-uppercase">{name}</h3>
                 <p>{description}</p>
                 <p className="fw-black text-primary fs-3">${price}</p>
-                <button onClick={() => onSelect(item)} type="button" className="btn btn-dark w-100" disabled={isSelected}>
+                <button onClick={() => onItemAdded(item)} type="button" className="btn btn-dark w-100" disabled={isSelected}>
                     {isSelected ? 'En tu Carrito' : 'Agregar al Carrito'}
                 </button>
             </div>

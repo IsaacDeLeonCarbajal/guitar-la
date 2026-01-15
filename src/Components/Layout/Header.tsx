@@ -1,15 +1,15 @@
-import type { Dispatch, SetStateAction } from "react";
-
-import type { Cart as CartType } from "../../Types/models";
+import type { Item as ItemType, Cart as CartType } from "../../Types/models";
 
 import Cart from "../Store/Cart";
 
 type HeaderProps = {
     cart: CartType;
-    setCart: Dispatch<SetStateAction<CartType>>;
+    onItemRemoved: (id: ItemType['id']) => void;
+    onQuantityUpdated: (id: ItemType['id'], amount: number) => void;
+    onClear: () => void;
 };
 
-export default function Header({ cart, setCart }: HeaderProps) {
+export default function Header({ cart, onItemRemoved, onQuantityUpdated, onClear }: HeaderProps) {
     return (
         <header className="py-5 header">
             <div className="container-xl">
@@ -23,7 +23,7 @@ export default function Header({ cart, setCart }: HeaderProps) {
                         <div className="carrito">
                             <img className="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
 
-                            <Cart cart={cart} setCart={setCart} />
+                            <Cart cart={cart} onItemRemoved={onItemRemoved} onQuantityUpdated={onQuantityUpdated} onClear={onClear} />
                         </div>
                     </nav>
                 </div>
